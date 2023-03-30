@@ -1,0 +1,48 @@
+<head>
+    <title>Problem one</title>   
+</head>
+
+<body>
+ <input type="number" id="num" name="n">
+    <button type="button" onclick="sum_to_n_a(num)">Function A</button>
+    <button type="button" onclick="sum_to_n_b(num)">Function B</button>
+    <button type="button" onclick="run();">Function C</button>
+    <p id="results"></p>
+    <script>
+        //for loop and display it on alert 
+        var sum_to_n_a = function (n) {
+            var total = 0;
+            var value = n.value
+            for (var i = 1; i <= value; i++) {
+                total += i;
+            }
+            alert(total);
+        };
+
+        // math method and display it on alert
+        var sum_to_n_b = function (n) {
+            var value = parseInt(n.value);
+            var total = value * (value + 1) / 2;
+            alert(total);
+        };
+
+        //while loop and display on the page using the run() function
+        function sum_to_n_c (n) {
+            var loop = 1; 
+            var sum = 0;
+            while(loop <= n){
+                sum += loop++;
+            }
+            return sum;
+        };
+
+        function run() {
+            val = document.getElementById("num").value;
+            document.getElementById("results").innerHTML = val + ": " + sum_to_n_c (val);
+        }
+    </script>
+</body>
+
+
+
+</html>
